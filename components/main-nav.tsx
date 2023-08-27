@@ -19,6 +19,21 @@ function MainNav({ className, ...props }: React.HTMLAttributes<HTMLElement>) {
             active: pathname === `/${params.storeId}/billboards`
         },
         {
+            href: `/${params.storeId}/categories`,
+            label: 'Categories',
+            active: pathname === `/${params.storeId}/categories`
+        },
+        {
+            href: `/${params.storeId}/sizes`,
+            label: 'Sizes',
+            active: pathname === `/${params.storeId}/sizes`
+        },
+        {
+            href: `/${params.storeId}/colors`,
+            label: 'Colors',
+            active: pathname === `/${params.storeId}/colors`
+        },
+        {
             href: `/${params.storeId}/settings`,
             label: 'Settings',
             active: pathname === `/${params.storeId}/settings`
@@ -30,7 +45,7 @@ function MainNav({ className, ...props }: React.HTMLAttributes<HTMLElement>) {
             {routes.map((route) => (<Link
                 key={route.href}
                 href={route.href}
-                className={cn("px-4 text-sm font-medium transition-colors hover:text-primary", route.active ? "text-black dark:test-white" : "text-muted-foreground")}>
+                className={cn("px-4 text-sm font-medium transition-colors hover:text-primary", route.active ? "text-black dark:text-white" : "text-muted-foreground")}>
                 {route.label}
             </Link>))}
         </nav>
